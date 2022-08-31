@@ -1,69 +1,99 @@
 <!DOCTYPE html>
 <html>
-	<head>
+  <head>
+      <style>
+      html, body { width 100%; height: 100%; background: #000; color: #fff; }
+      body { margin: 0; overflow: hidden; }
+      canvas { width: 100%; height: 100%; }
+      </style>
 		<meta charset=UTF-8 />
-		<link rel="stylesheet" type="text/css" href="./styles/main.css" />
-	</head>
+  </head>
 	<body>
 		<script src="./node_modules/three/build/three.min.js"></script>
 		<script src="./node_modules/three/examples/js/loaders/GLTFLoader.js"></script>
+		<script src="./node_modules/three/examples/js/loaders/MTLLoader.js"></script>
+		<script src="./node_modules/three/examples/js/loaders/OBJLoader.js"></script>
 		<script src="./node_modules/three/examples/js/controls/OrbitControls.js"></script>
 		<script>
-			let scene, camera, renderer;
+        import * as THREE from 'https://unpkg.com/three/build/three.module.js';
 
-			function init() {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-				scene = new THREE.Scene();
-				scene.background = new THREE.Color(0xdddddd);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.body.appendChild( renderer.domElement );
 
-				camera = new THREE.PerspectiveCamera(40, wnidow.innerwidth/window.innerHeight,1,5000);
-				camera.rotation.y = 45/180*Math.PI;
-				camera.position.x = 800;
-				camera.positino.y = 100;
-				camera.position.z = 100;
+		function getScene() {
+			var scene = new THREE.Scene();
+			scene.background = new THREE.Color(0x111111);
+			return scene;
+		}
 
-				controls = new THREE.OrbitControls(camera);
-				controls.addEventListener('change', renderer);
+		function getCamera() {
+			var aspectRatio = window.innerWidth / window.innerHeight;
+			var camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 1000);
+			camera.position.set(0, 1, -10);
+			return camera;
+		}
 
-				hlight = new THREE.AmbientLight (0x404040,100);
-				scene.add(hlight);
+		function getLight(scene) {
+			var light = new THREE.PointLight(0xffffff, 1, 0);
+			light.position.set(1, 1, 1);
+			scene.add(light);
 
-				directionalLight = new THREE.DirectionalLight(0xffffff,100);
-				directionalLight.positino.set(0,1,0);
-				directionalLight.castShadow = true;
-				scene.add(directionalLight);
-				light = new THREE.PointLight(0xc4c4c4,10);
-				light.position.set(0,300,500);
-				scene.add(light);
-				light2 = new THREE.PointLight(0xc4c4c4,10);
-				light2.position.set(500,100,0);
-				scene.add(light2);
-				light3 = new THREE.PointLight(0xc4c4c4,10);
-				light3.position.set(0,100,-500);
-				scene.add(light3);
-				light4 = new THREE.PointLight(0xc4c4c4,10);
-				light4.position.set(-500,100,500);
-				scene.add(light4);
+			var ambientLight = new THREE.AmbientLight(0x111111);
+			acene.add(ambientLight);
+			return light
+		}
+
+		function getRenderer() {
+    // Create the canvas with a renderer
+    var renderer = new THREE.WebGLRenderer({antialias: true});
+    // Add support for retina displays
+    renderer.setPixelRatio(window.devicePixelRatio);
+    // Specify the size of the canvas
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    // Add the canvas to the DOM
+    document.body.appendChild(renderer.domElement);
+    return renderer;
+  }
 
 
-				renderer = new THREE.WebGLRenderer({antialias:true});
-				renderer.setSize(window.innerWidth,window.innerHeight);
-				document.body.appendChild(renderer.domElement);
+  function getControls(camera, renderer) {
+    var controls = new THREE.TrackballControls(camera, renderer.domElement);
+    controls.zoomSpeed = 0.4;
+    controls.panSpeed = 0.4;
+    return controls;
+  }
 
-				let loader = new THREE.GLTFLoader();
-				loader.load('./styles/FUD Dice V5 v13.gltf', function(gltf){
-					car = gltf.scene.children[0];
-					car.scale.set(0.5,0.5,0.5);
-					scene.add(gltf.scene);
-					animate();
-				});
 
-				function animate () {
-					renderer.render(scene, camera);
-					requestAnimationFrame(animate);
-				}
-			}
-				init();
+  function loadModel() {
+    var loader = new THREE.OBJLoader();
+    loader.load( './styles/FUD Dice V5 v14.obj', function ( object ) {
+      object.rotation.z = Math.PI;
+      scene.add( object );
+      document.querySelector('h1').style.display = 'none';
+    } );
+  }
+
+  function render() {
+    requestAnimationFrame(render);
+    renderer.render(scene, camera);
+    controls.update();
+  };
+
+  var scene = getScene();
+  var camera = getCamera();
+  var light = getLight(scene);
+  var renderer = getRenderer();
+  var controls = getControls(camera, renderer);
+
+  loadModel();
+
+  render();
+
+
 		</script>
 
 	</body>
