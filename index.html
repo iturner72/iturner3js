@@ -65,7 +65,11 @@
 				camera.add( pointLight );
 				scene.add( camera );
 
+
+
+
 				// manager
+
 
 				function loadModel() {
 
@@ -76,9 +80,14 @@
 					} );
 
 					object.position.y = - 25;
+					object.scale.set(4,4,4);
 					scene.add( object );
-
 				}
+
+				var phongMaterial = new THREE.MeshPhongMaterial({
+				shininess: 100,
+				color: 0xf1f1f1
+				});
 
 				const manager = new THREE.LoadingManager( loadModel );
 
@@ -86,6 +95,7 @@
 
 				const textureLoader = new THREE.TextureLoader( manager );
 				const texture = textureLoader.load( './styles/FUD Dice V5 gold render.png' );
+				const sphMesh = new THREE.Mesh(object, phongMaterial);
 
 				// model
 
