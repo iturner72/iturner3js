@@ -58,10 +58,10 @@
 
 				scene = new THREE.Scene();
 
-				const ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
+				const ambientLight = new THREE.AmbientLight( 0xe8c966, 0.4 );
 				scene.add( ambientLight );
 
-				const pointLight = new THREE.PointLight( 0xffffff, 0.8 );
+				const pointLight = new THREE.PointLight( 0xe8c966, 0.8 );
 				camera.add( pointLight );
 				scene.add( camera );
 
@@ -69,6 +69,7 @@
 
 
 				// manager
+
 
 
 				function loadModel() {
@@ -84,18 +85,18 @@
 					scene.add( object );
 				}
 
-				var phongMaterial = new THREE.MeshPhongMaterial({
-				shininess: 100,
-				color: 0xf1f1f1
-				});
-
 				const manager = new THREE.LoadingManager( loadModel );
 
 				// texture
 
 				const textureLoader = new THREE.TextureLoader( manager );
 				const texture = textureLoader.load( './styles/FUD Dice V5 gold render.png' );
-				const sphMesh = new THREE.Mesh(object, phongMaterial);
+				var meshMaterial = new THREE.MeshPhongMaterial({color: 0x297dd});
+				var spotLight = new THREE.SpotLight(0xff0000);
+				spotLight.position.set(-0, 60, 60);
+				spotLight.castShadow = true;
+				spotLight.intensity = 2;
+				scene.add(spotLight);
 
 				// model
 
@@ -160,6 +161,8 @@
 				requestAnimationFrame( animate );
 				render();
 
+				stats.update()
+
 			}
 
 			function render() {
@@ -172,6 +175,7 @@
 				renderer.render( scene, camera );
 
 			}
+
 
 		</script>
 
