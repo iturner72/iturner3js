@@ -91,7 +91,16 @@
 
 				const textureLoader = new THREE.TextureLoader( manager );
 				const texture = textureLoader.load( './styles/FUD Dice V5 gold render.png' );
-				var meshMaterial = new THREE.MeshPhongMaterial({color: 0xffffff});
+                var meshMaterial = new THREE.MeshStandardMaterial( {
+                color: 0xffffff,
+                roughness: .5,
+                metalness: .5,
+                envMap: .5,
+                envMapIntensity: .5
+                } );
+
+
+
 				var spotLight = new THREE.SpotLight(0xff0000);
 				spotLight.position.set(-0, 60, 60);
 				spotLight.castShadow = true;
