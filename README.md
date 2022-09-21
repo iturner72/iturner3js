@@ -27,7 +27,10 @@ trinkets, then it's almost as if we are members in the Network State with our
 respective backgrounds. There would be quite a bit of geographical diversity
 if enough people decided to change their backgrounds (I can change it for you
 if you can't get it working), which is just the coolest thought to me and
-reminds me of the GIF in Balaji's book.
+reminds me of the GIF in Balaji's book. Of course the backgrounds don't have to
+dox you, but if you currently reside in a city with an awesome skyline or
+landscape and you feel comfortable sharing, it would really be something cool.
+A digital represantation of a physical geographic decentralization.
 
 ![Network_State](./styles/balaji.png)
 
