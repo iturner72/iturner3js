@@ -27,7 +27,7 @@ respective backgrounds. There would be quite a bit of geographical diversity
 if enough people decided to change their backgrounds (I can change it for you
 if you can't get it working), which is just the coolest thought to me and
 reminds me of the GIF in Balaji's book.
-![Alt text](~/dev/iturner3js/styles/balaji.png)
+![Network_State](./styles/balaji.png)
 
 
 
