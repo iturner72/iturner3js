@@ -3,6 +3,7 @@
 ### Quickstart
 I have decided that since I was already using Git for the trinket development,
 I should point people in the community to it since it's open source by default.
+I enjoy doing lots of small silly commits so forgive me.
 
 I will provide 2 different methods for running the three.js. The only
 editing you will need to do would be to download the model files and images. In
