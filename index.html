@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webgl - loaders - OBJ loader</title>
+		<title>Digital Trinket</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="./styles/main.css">
@@ -39,6 +39,8 @@
 			let camera, scene, renderer;
 
 			let pointLight;
+
+			var pivotPoint;
 
 			init();
 			animate();
@@ -81,7 +83,7 @@
 				const trinketMaterial2 = new THREE.MeshLambertMaterial( { color: 0xff5733, envMap: refractionCube, refractionRatio: 0.22 } );
 				const trinketMaterial1 = new THREE.MeshLambertMaterial( { color: 0xff5733, envMap: reflectionCube } );
 
-				// model
+
 				const objLoader = new OBJLoader();
 
 					objLoader.setPath('./styles/');
@@ -89,7 +91,8 @@
 
 					const trink = object.children[ 0 ];
 
-					trink.scale.multiplyScalar( 40 );
+
+					trink.scale.multiplyScalar( 6 );
 					trink.position.y = -10;
 					trink.position.z = -10;
 					trink.material = trinketMaterial1;
@@ -104,6 +107,15 @@
 
 
 					scene.add(trink, trink2, trink3);
+
+					// Pivot Point
+					pivotPoint = new THREE.Object3D();
+					trink.add(pivotPoint);
+
+					trink2.position.set( 0, 0, 0)
+					pivotPoint.add(trink2);
+					trink3.position.set( 130, 130, 0)
+					pivotPoint.add(trink3);
 
 					} );
 
@@ -144,6 +156,7 @@
 			}
 
 
+
 			function animate() {
 
 				requestAnimationFrame( animate );
@@ -153,12 +166,25 @@
 
 			}
 
+
 			function render() {
 
+				var time = Date.now() * 0.0005;
+//			    trink.position.x = Math.cos( time * 10 ) * 5;
+//			    trink.position.y = Math.cos( time * 7 ) * 3;
+//			    trink.position.z = Math.cos( time * 8 ) * 4;
+
+				pivotPoint.rotation.y += 0.05;
+				pivotPoint.rotation.z += 0.05;
 				renderer.render( scene, camera );
 				stats.update()
 
 			}
+
+
+
+
+
 
 		</script>
 	</body>
