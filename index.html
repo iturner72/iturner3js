@@ -93,16 +93,16 @@
 
 
 					trink.scale.multiplyScalar( 6 );
-					trink.position.y = -10;
-					trink.position.z = -10;
+					trink.position.y = 0;
+					trink.position.z = 0;
 					trink.material = trinketMaterial1;
 
 					const trink2 = trink.clone();
-					trink2.position.x = -900;
+					trink2.position.x = 0;
 					trink2.material = trinketMaterial2;
 
 					const trink3 = trink.clone();
-					trink3.position.x = 900;
+					trink3.position.x = 0;
 					trink3.material = trinketMaterial3;
 
 
@@ -112,9 +112,9 @@
 					pivotPoint = new THREE.Object3D();
 					trink.add(pivotPoint);
 
-					trink2.position.set( 0, 0, 0)
+					trink2.position.set( 0, 0, -50)
 					pivotPoint.add(trink2);
-					trink3.position.set( 100, 100, 0)
+					trink3.position.set( 0, 0, -50)
 					pivotPoint.add(trink3);
 
 					} );
