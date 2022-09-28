@@ -20,6 +20,51 @@ I feel that there are far more creative people than me on gm. This is why I
 will strive to make it easy for anyone to boot up and make edits. I can't wait
 to see what we come up with.
 
+## Dependencies
+I personally run the following setup, Windows 10 with WSL 2 (Ubuntu 20.04).
+Use the following tutorial to mirror my setup:
+https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10
+I use the <servez> command (you can use any software to run the local server)
+in my bash shell at the root of the project directory to run a local server at
+localhost:8080. You can install the servez package found here:
+https://greggman.github.io/servez/ with:
+* clone this repo
+```
+git clone https://github.com/gregman/servez.git
+```
+* change to the project's folder
+```
+cd servez
+```
+* install dependencies
+```
+npm install
+```
+You also need node.js and npm which you can get with:
+``
+sudo apt update
+sudo apt install nodejs npm
+``
+* Install three.js
+```
+npm install three
+```
+
+## Running the Code
+* Clone the project
+```
+git clone https://github.com/iturner72/iturner3js
+```
+* Change to the project's root directory
+```
+cd iturner3js
+```
+* Start the local server
+```
+servez
+```
+You should now be able to view the Trinket at localhost:8080 in your browser.
+
 ## Network State Parallel
 I am obsessed with the Network State idea so I couldn't help but think of a
 parallel with this trinket. If Matt and Nic give the greenlight for 200 unique
