@@ -25,7 +25,7 @@ I personally run the following setup, Windows 10 with WSL 2 (Ubuntu 20.04).
 Use the following tutorial to mirror my setup:
 https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10
 
-You also need node.js and npm which you can get with:
+* You also need node.js and npm which you can get with:
 ``
 sudo apt update
 sudo apt install nodejs npm
