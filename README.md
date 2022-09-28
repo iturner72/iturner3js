@@ -26,12 +26,12 @@ Use the following tutorial to mirror my setup:
 https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10
 
 * You also need node.js and npm which you can get with:
-``
+```
 sudo apt update
 ```
 ```
 sudo apt install nodejs npm
-``
+```
 
 I use the 'servez' command (you can use any software to run the local server)
 in my bash shell at the root of the project directory to run a local server at
