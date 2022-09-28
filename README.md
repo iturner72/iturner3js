@@ -24,10 +24,17 @@ to see what we come up with.
 I personally run the following setup, Windows 10 with WSL 2 (Ubuntu 20.04).
 Use the following tutorial to mirror my setup:
 https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10
+
+You also need node.js and npm which you can get with:
+``
+sudo apt update
+sudo apt install nodejs npm
+``
+
 I use the 'servez' command (you can use any software to run the local server)
 in my bash shell at the root of the project directory to run a local server at
-localhost:8080. You can install the servez package found here:
-https://greggman.github.io/servez/ with:
+localhost:8080. Install the servez package found here:
+https://greggman.github.io/servez/
 * clone this repo
 ```
 git clone https://github.com/gregman/servez.git
@@ -40,11 +47,6 @@ cd servez
 ```
 npm install
 ```
-You also need node.js and npm which you can get with:
-``
-sudo apt update
-sudo apt install nodejs npm
-``
 * Install three.js
 ```
 npm install three
