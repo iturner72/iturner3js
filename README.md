@@ -24,7 +24,7 @@ to see what we come up with.
 I personally run the following setup, Windows 10 with WSL 2 (Ubuntu 20.04).
 Use the following tutorial to mirror my setup:
 https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10
-I use the <servez> command (you can use any software to run the local server)
+I use the 'servez' command (you can use any software to run the local server)
 in my bash shell at the root of the project directory to run a local server at
 localhost:8080. You can install the servez package found here:
 https://greggman.github.io/servez/ with:
