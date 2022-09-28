@@ -28,6 +28,8 @@ https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10
 * You also need node.js and npm which you can get with:
 ``
 sudo apt update
+```
+```
 sudo apt install nodejs npm
 ``
 
