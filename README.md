@@ -1,4 +1,7 @@
-## Digital Trinket Docs
+# Digital Trinket Docs
+
+## Potential Trinket Colors
+![alt text](./styles/mystic_seafoam_green.png)
 
 ### Quickstart
 I have decided that since I was already using Git for the trinket development,
