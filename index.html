@@ -87,7 +87,7 @@
 				const objLoader = new OBJLoader();
 
 					objLoader.setPath('./styles/');
-					objLoader.load( 'FUD Dice V5 v14.obj', function ( object ) {
+					objLoader.load( 'OTB_Digital_Trinket_Draft.obj', function ( object ) {
 
 					const trink = object.children[ 0 ];
 
@@ -170,8 +170,8 @@
 			function render() {
 
 
-				pivotPoint.rotation.y += 0.02;
-				pivotPoint.rotation.z += 0.02;
+				pivotPoint.rotation.y += 0.01;
+				pivotPoint.rotation.z += 0.01;
 
 				renderer.render( scene, camera );
 				stats.update()
