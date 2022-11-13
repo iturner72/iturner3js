@@ -1,9 +1,9 @@
 # Digital Trinket Docs
 
 ## Potential Trinket Colors
-![alt text](./styles/mystic_seafoam_green.png)
-![alt text](./styles/violet.png)
-![alt text](./styles/dark_green.png)
+![alt text](./styles/colors/mystic_seafoam_green)
+![alt text](./styles/colors/violet)
+![alt text](./styles/colors/dark_green)
 
 ### Quickstart
 I have decided that since I was already using Git for the trinket development,
