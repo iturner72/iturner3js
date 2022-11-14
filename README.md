@@ -50,6 +50,10 @@ git clone https://github.com/gregman/servez.git
 ```
 cd servez
 ```
+* checkout master branch
+```
+git checkout master
+```
 * install dependencies
 ```
 npm install
