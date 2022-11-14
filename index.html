@@ -79,10 +79,9 @@
 				scene.add( pointLight );
 
 				//materials
-				const trinketMaterial3 = new THREE.MeshLambertMaterial( { color: 0xff5733, envMap: reflectionCube, combine: THREE.MixOperation, reflectivity: .87 } );
-				const trinketMaterial2 = new THREE.MeshLambertMaterial( { color: 0x580818, envMap: refractionCube, } );
-//				const trinketMaterial2 = new THREE.MeshLambertMaterial( { color: 0x580818, envMap: refractionCube, refractionRatio: 0.22, reflectivity: 0.22 } );
-				const trinketMaterial1 = new THREE.MeshLambertMaterial( { color: 0x000000, envMap: reflectionCube } );
+				const trinketMaterial1 = new THREE.MeshLambertMaterial( { color: 0xff5733, envMap: reflectionCube, combine: THREE.MixOperation, reflectivity: .87 } );
+				const trinketMaterial2 = new THREE.MeshLambertMaterial( { color: 0x580818, envMap: refractionCube, refractionRatio: 0.22, reflectivity: 0.22 } );
+				const trinketMaterial3 = new THREE.MeshLambertMaterial( { color: 0x000000, envMap: reflectionCube } );
 
 
 				const objLoader = new OBJLoader();
@@ -113,9 +112,9 @@
 					pivotPoint = new THREE.Object3D();
 					trink.add(pivotPoint);
 
-					trink2.position.set( 0, 0, -50)
+					trink2.position.set( 0, 100, 0)
 					pivotPoint.add(trink2);
-					trink3.position.set( 0, 0, -50)
+					trink3.position.set( 100, 0, 0)
 					pivotPoint.add(trink3);
 
 					} );
