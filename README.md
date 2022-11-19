@@ -4,6 +4,7 @@
 ![alt text](./styles/colors/mystic_seafoam_green.png)
 ![alt text](./styles/colors/violet.png)
 ![alt text](./styles/colors/dark_green.png)
+![alt text](./styles/colors/sea_green.png)
 
 ### Quickstart
 I have decided that since I was already using Git for the trinket development,
